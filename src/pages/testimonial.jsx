@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Monitor, Phone } from 'lucide-react';
 
-const Contact = () => {
+const Portfolio = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen font-sans flex flex-col md:flex-row bg-gray-100">
-
       {/* Sidebar for Desktop */}
       <aside className="hidden md:flex flex-col w-1/5 bg-yellow-500 text-white items-center py-8 space-y-8">
         <img
@@ -43,58 +41,48 @@ const Contact = () => {
           <Link to="/about" className="block text-center hover:text-black" onClick={() => setMenuOpen(false)}>About Me</Link>
           <Link to="/resume" className="block text-center hover:text-black" onClick={() => setMenuOpen(false)}>Resume</Link>
           <Link to="/portfolio" className="block text-center hover:text-black" onClick={() => setMenuOpen(false)}>Portfolio</Link>
-          <Link to="/testimonial" className="block text-center hover:text-black" onClick={() => setMenuOpen(false)}>Testimonials</Link>
+          <Link to="/testimonial" className="block text-center hover:text-black" onClick={() => setMenuOpen(false)}>Testimonial</Link>
           <Link to="/contact" className="block text-center hover:text-black" onClick={() => setMenuOpen(false)}>Contact</Link>
         </div>
       )}
 
       {/* Main Content */}
       <main className="w-full md:w-4/5 p-6 md:p-12">
-        <section id="contact">
-          {/* CONTACT ME Heading */}
-          <h1 className="text-3xl sm:text-5xl text-center font-bold border-b-4 border-black pb-4 mb-8 text-gray-800">CONTACT ME</h1>
+        <section id="about">
+          <h1 className="text-3xl sm:text-5xl text-center font-bold border-b-4 border-black pb-4 mb-8 text-gray-800">TESTIMONIAL</h1>
+          <p className="text-lg text-gray-700 mb-8">
+            I'm <span className="font-bold text-yellow-500">Shourya Verma</span>,
+            a Graphic Designer and Electronics Engineer passionate about creating
+            beautiful and functional designs and smart technologies.
+          </p>
 
-          {/* Outer Div - Align everything to left */}
-          <div className="min-h-[70vh] flex flex-col items-start justify-start bg-gray-100 ">
-
-            {/* Heading and Paragraph */}
-            <div className="mb-12 max-w-4xl">
-              <h2 className="text-4xl md:text-5xl font-light text-gray-800">
-                Feel <span className="font-bold">free</span> to contact me!
-              </h2>
-              <p className="text-gray-600 text-lg md:text-xl mt-6">
-              I’m always happy to work on new projects, collaborations, or creative ideas. Reach out via email or phone—I’d love to hear from you!
-              </p>
-            </div>
-            <div></div>
-            {/* Contact Info Cards */}
-            <div className="w-full flex flex-col md:flex-row items-center justify-evenly gap-8 mb-12">
-              {/* Email Section */}
-              <div className="flex items-center gap-6 w-full md:w-auto">
-                <Monitor className="w-16 h-16 md:w-20 md:h-20 text-gray-700" />
-                <div className="text-gray-700 space-y-2 text-left">
-                  <p className="font-medium text-lg">shouryav760@gmail.com</p>
-                  <p className="font-medium text-lg">@shouryaverma.dev</p>
-                </div>
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+            {[
+              ["2+", "Years Experience"],
+              ["10+", "Projects Done"],
+              ["00+", "Happy Clients"],
+              ["100+", "Followers"],
+            ].map(([count, label], i) => (
+              <div key={i} className="text-center">
+                <h2 className="text-3xl font-bold text-yellow-500">{count}</h2>
+                <p className="text-gray-600 mt-1">{label}</p>
               </div>
+            ))}
+          </div>
 
-              {/* Phone Section */}
-              <div className="flex items-center gap-6 w-full md:w-auto">
-                <Phone className="w-16 h-16 md:w-20 md:h-20 text-gray-700" />
-                <div className="text-gray-700 space-y-2 text-left">
-                  <p className="font-medium text-lg">+91 9997175856</p>
-                  <p className="font-medium text-lg">+91 9587486789</p>
-                </div>
+          {/* What I Do */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {[
+              ["Print Design", "Creating brochures, cards, and banners."],
+              ["Web Design", "Building responsive, modern websites."],
+              ["Photography", "Capturing moments with creativity."],
+            ].map(([title, desc], i) => (
+              <div key={i} className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
+                <h3 className="text-xl font-bold mb-2 text-gray-800">{title}</h3>
+                <p className="text-gray-600">{desc}</p>
               </div>
-            </div>
-
-            {/* Thank You Message */}
-            <div className="w-full text-center">
-              <h2 className="text-2xl md:text-3xl font-bold tracking-wide">
-                THANKS FOR YOUR PATIENCE!
-              </h2>
-            </div>
-
+            ))}
           </div>
         </section>
       </main>
@@ -102,4 +90,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default Portfolio;

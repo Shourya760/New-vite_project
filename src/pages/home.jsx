@@ -4,7 +4,7 @@ import { Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 function Home() {
   return (
-    <div className="font-sans bg-white text-gray-800 min-h-screen flex flex-col">
+    <div className=" bg-white text-gray-800 min-h-screen flex flex-col">
       {/* Hero Section */}
       <div className="flex flex-col md:flex-row flex-1">
 
@@ -15,16 +15,15 @@ function Home() {
             I'm <span className="text-yellow-500">Shourya Verma</span>
           </h1>
           <h3 className="text-md md:text-lg font-medium uppercase text-gray-700">
-            Graphic Designer / Electronics Engineer
+             Electronics Engineer / Creative Artist
           </h3>
           <p className="text-gray-600 max-w-md">
-            Creative electronic engineer with a passion for innovation, blending technical expertise and artistic flair to build smart, cutting-edge solutions.
-          </p>
+          Electrical engineer with a creative edge, blending technical expertise with artistic vision to design innovative solutions. Welcome to my portfolio, where engineering meets imagination. Here, circuits and creativity converge to build tomorrow's sustainable technologies with both precision and passion          </p>
           <Link
             to="/about"
             className="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded-md w-max transition-all duration-300"
           >
-            Know About Me
+            More About Me
           </Link>
         </div>
 
@@ -37,12 +36,13 @@ function Home() {
           />
 
           {/* Social Icons */}
-          <div className="hidden md:flex flex-col absolute right-6 top-1/2 -translate-y-1/2 bg-yellow-500 py-4 px-3 rounded-full shadow-2xl space-y-4">
+          <div className="hidden md:flex flex-col absolute right-6 top-1/2 -translate-y-1/2 bg-yellow-500 py-4 px-3 rounded-full shadow-2xl space-y-4 transition-transform duration-700 ease-out">
+
             {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
               <a
                 key={i}
                 href="#"
-                className="w-8 h-8 rounded-full flex items-center justify-center text-black hover:scale-110 transform transition duration-300 bg-white shadow-md"
+                className="w-8 h-8 rounded-full flex items-center justify-center text-black hover:scale-110 transform transition duration-300 shadow-md"
                 aria-label={`Link to social media`}
               >
                 <Icon size={20} />

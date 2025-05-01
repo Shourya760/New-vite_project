@@ -18,7 +18,7 @@ const About = () => {
           <Link to="/about" className="hover:text-black block">About Me</Link>
           <Link to="/resume" className="hover:text-black block">Resume</Link>
           <Link to="/portfolio" className="hover:text-black block">Portfolio</Link>
-          <Link to="/testimonials" className="hover:text-black block">Testimonials</Link>
+          <Link to="/testimonial" className="hover:text-black block">Testimonial</Link>
           <Link to="/contact" className="hover:text-black block">Contact</Link>
         </nav>
       </aside>
@@ -41,7 +41,7 @@ const About = () => {
           <Link to="/about" className="block text-center hover:text-black" onClick={() => setMenuOpen(false)}>About Me</Link>
           <Link to="/resume" className="block text-center hover:text-black" onClick={() => setMenuOpen(false)}>Resume</Link>
           <Link to="/portfolio" className="block text-center hover:text-black" onClick={() => setMenuOpen(false)}>Portfolio</Link>
-          <Link to="/testimonials" className="block text-center hover:text-black" onClick={() => setMenuOpen(false)}>Testimonials</Link>
+          <Link to="/testimonial" className="block text-center hover:text-black" onClick={() => setMenuOpen(false)}>Testimonial</Link>
           <Link to="/contact" className="block text-center hover:text-black" onClick={() => setMenuOpen(false)}>Contact</Link>
         </div>
       )}
@@ -49,15 +49,16 @@ const About = () => {
       {/* Main Content */}
       <main className="w-full md:w-4/5 p-6 md:p-12">
         <section id="about">
-          <h1 className="text-5xl font-bold mb-6 text-gray-800">ABOUT ME</h1>
+          <h1 className="text-3xl sm:text-5xl text-center font-bold border-b-4 border-black pb-4 mb-8 text-gray-800">ABOUT ME</h1>
           <p className="text-lg text-gray-700 mb-8">
             I'm <span className="font-bold text-yellow-500">Shourya Verma</span>,
-            a Graphic Designer and Electronics Engineer passionate about creating
-            beautiful and functional designs and smart technologies.
+            a Electronics Engineer who loves creating beautiful designs and smart tech solutions.
+             I enjoy combining creativity with technical skills to make things that look great and work even better. 
+             Let's build something amazing together!"
           </p>
 
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
             {[
               ["2+", "Years Experience"],
               ["10+", "Projects Done"],
@@ -65,8 +66,8 @@ const About = () => {
               ["100+", "Followers"],
             ].map(([count, label], i) => (
               <div key={i} className="text-center">
-                <h2 className="text-3xl font-bold text-yellow-500">{count}</h2>
-                <p className="text-gray-600 mt-1">{label}</p>
+                <h2 className="text-5xl font-bold text-yellow-500">{count}</h2>
+                <p className="text-gray-600 mt-5">{label}</p>
               </div>
             ))}
           </div>
@@ -74,12 +75,12 @@ const About = () => {
           {/* What I Do */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              ["Print Design", "Creating brochures, cards, and banners."],
-              ["Web Design", "Building responsive, modern websites."],
-              ["Photography", "Capturing moments with creativity."],
+               ["Circuit Design", "Creating efficient electronic circuits and PCB layouts."],
+               ["VLSI Design", "Developing chip layouts and semiconductor solutions."],
+               ["Embedded Systems", "Developing smart IoT solutions and automation."],
             ].map(([title, desc], i) => (
-              <div key={i} className="bg-white p-6 rounded-lg shadow hover:shadow-lg transition">
-                <h3 className="text-xl font-bold mb-2 text-gray-800">{title}</h3>
+              <div key={i} className="bg-white p-6  shadow hover:shadow-lg transition rounded-2xl">
+                <h3 className="text-xl font-bold mb-2 text-black ">{title}</h3>
                 <p className="text-gray-600">{desc}</p>
               </div>
             ))}
