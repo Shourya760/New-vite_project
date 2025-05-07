@@ -95,7 +95,7 @@ const Contact = () => {
                   <div className="text-gray-700 space-y-2">
                     <h3 className="font-bold text-xl text-gray-800">Email Me</h3>
                     <p className="text-lg">shouryav760@gmail.com</p>
-                    <p className="text-lg">@shouryaverma.dev</p>
+                    <p className="text-lg">@shourya*********.com</p>
                   </div>
                 </div>
 
@@ -105,7 +105,7 @@ const Contact = () => {
                   <div className="text-gray-700 space-y-2">
                     <h3 className="font-bold text-xl text-gray-800">Call Me</h3>
                     <p className="text-lg">+91 9997175856</p>
-                    <p className="text-lg">+91 9587486789</p>
+                    <p className="text-lg">+91 92********</p>
                   </div>
                 </div>
 
@@ -121,9 +121,21 @@ const Contact = () => {
               </div>
 
               {/* Contact Form Section */}
-              <div className="w-full lg:w-1/2">
-                <form onSubmit={handleSubmit} className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                
+                  <form 
+                  action="https://formsubmit.co/shouryav760@gmail.com" 
+                  method="POST"
+                  className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+                >
+                
                   <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Me a Message</h3>
+                  
+                  <input type="hidden" name="_subject" value="New message from portfolio!" />
+                  <input type="hidden" name="_captcha" value="false" />
+                  <input type="hidden" name="_template" value="table" />
+                  <input type="hidden" name="_next" value="http://localhost:5173/contact" />
+
+                  <input type="text" name="_honey" style={{ display: "none" }} />
                   
                   <div className="mb-6">
                     <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Your Name</label>
@@ -131,10 +143,8 @@ const Contact = () => {
                       type="text"
                       id="name"
                       name="name"
-                      value={formData.name}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
                       required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
                     />
                   </div>
                   
@@ -144,10 +154,8 @@ const Contact = () => {
                       type="email"
                       id="email"
                       name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
                       required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
                     />
                   </div>
                   
@@ -156,11 +164,9 @@ const Contact = () => {
                     <textarea
                       id="message"
                       name="message"
-                      value={formData.message}
-                      onChange={handleChange}
                       rows="5"
-                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
                       required
+                      className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
                     ></textarea>
                   </div>
                   
@@ -171,7 +177,6 @@ const Contact = () => {
                     Send Message
                   </button>
                 </form>
-              </div>
             </div>
 
             {/* Thank You Message */}
