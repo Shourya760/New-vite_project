@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Testimonial = () => {
+const Hobbies = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const sketches = [
@@ -14,20 +14,20 @@ const Testimonial = () => {
     <div className="min-h-screen font-sans flex flex-col md:flex-row bg-gray-50">
       {/* Sidebar */}
       <aside className="hidden md:flex flex-col w-1/5 bg-yellow-500 text-white items-center py-8 space-y-8">
-        <img
-          src="/shourya.jpg"
-          alt="Profile"
-          className="w-36 h-36 object-cover rounded-full border-4 border-white shadow-lg"
-        />
-        <nav className="space-y-2 text-lg w-full px-4">
-          <Link to="/home" className="hover:text-black block py-2 px-4 rounded transition duration-300">Home</Link>
-          <Link to="/about" className="hover:text-black block py-2 px-4 rounded transition duration-300">About Me</Link>
-          <Link to="/resume" className="hover:text-black block py-2 px-4 rounded transition duration-300">Resume</Link>
-          <Link to="/portfolio" className="hover:text-black block py-2 px-4 rounded transition duration-300">Portfolio</Link>
-          <Link to="/hobbies" className="bg-white text-yellow-500 hover:bg-gray-100 block py-2 px-4 rounded transition duration-300 font-medium">Hobbies</Link>
-          <Link to="/contact" className="hover:text-black block py-2 px-4 rounded transition duration-300">Contact</Link>
-        </nav>
-      </aside>
+              <img
+                src="/shourya.jpg"
+                alt="Profile"
+                className="w-40 h-40 object-cover rounded-full border-4 border-white shadow-lg"
+              />
+              <nav className="space-y-4 text-lg w-full px-4">
+                <Link to="/home" className="hover:text-black block py-2 px-4 rounded transition duration-300">Home</Link>
+                <Link to="/about" className="hover:text-black block py-2 px-4 rounded transition duration-300">About Me</Link>
+                <Link to="/resume" className="hover:text-black block py-2 px-4 rounded transition duration-300">Resume</Link>
+                <Link to="/portfolio" className="hover:text-black block py-2 px-4 rounded transition duration-300">Portfolio</Link>
+                <Link to="/Hobbies" className="bg-white text-yellow-500 hover:bg-gray-100 block py-2 px-4 rounded transition duration-300 font-medium">Hobbies</Link>
+                <Link to="/contact" className="hover:text-black block py-2 px-4 rounded transition duration-300">Contact</Link>
+              </nav>
+            </aside>
 
       {/* Mobile Navbar */}
       <div className="md:hidden bg-yellow-500 p-4 flex justify-between items-center text-white">
@@ -58,23 +58,6 @@ const Testimonial = () => {
           My Hobbies & Interests
         </h1>
 
-        {/* Music Section */}
-        <section className="mb-16">
-          <h2 className="text-2xl font-semibold text-gray-700 mb-6 text-center">🎶 Passion for Music</h2>
-          <div className="max-w-md mx-auto bg-white rounded-xl shadow-md hover:shadow-xl transition duration-300 p-6">
-            <iframe
-              style={{ borderRadius: "12px" }}
-              src="https://open.spotify.com/embed/track/4OCpBhcJxiSd1azaBOy21U?utm_source=generator"
-              width="100%"
-              height="352"
-              frameBorder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              allowFullScreen
-              loading="lazy"
-            ></iframe>
-            <p className="text-center text-gray-600 mt-4 italic">Here's one of my all-time favorite tracks.</p>
-          </div>
-        </section>
 
         {/* Sketches Section */}
         <section>
@@ -103,4 +86,4 @@ const Testimonial = () => {
   );
 };
 
-export default Testimonial;
+export default Hobbies;

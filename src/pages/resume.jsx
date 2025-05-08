@@ -30,7 +30,7 @@ const Resume = () => {
                 <Link to="/about" className="hover:text-black block py-2 px-4 rounded transition duration-300">About Me</Link>
                 <Link to="/resume" className="bg-white text-yellow-500 hover:bg-gray-100 block py-2 px-4 rounded transition duration-300 font-medium">Resume</Link>
                 <Link to="/portfolio" className="hover:text-black block py-2 px-4 rounded transition duration-300">Portfolio</Link>
-                <Link to="/testimonial" className="hover:text-black block py-2 px-4 rounded transition duration-300">Testimonial</Link>
+                <Link to="/Hobbies" className="hover:text-black block py-2 px-4 rounded transition duration-300">Hobbies</Link>
                 <Link to="/contact" className="hover:text-black block py-2 px-4 rounded transition duration-300">Contact</Link>
               </nav>
             </aside>
@@ -53,7 +53,7 @@ const Resume = () => {
                 <Link to="/about" className="block text-center hover:text-black py-2" onClick={() => setMenuOpen(false)}>About Me</Link>
                 <Link to="/resume" className="block text-center hover:text-black py-2 bg-white text-yellow-500 rounded font-medium" onClick={() => setMenuOpen(false)}>Resume</Link>
                 <Link to="/portfolio" className="block text-center hover:text-black py-2" onClick={() => setMenuOpen(false)}>Portfolio</Link>
-                <Link to="/testimonial" className="block text-center hover:text-black py-2" onClick={() => setMenuOpen(false)}>Testimonials</Link>
+                <Link to="/Hobbies" className="block text-center hover:text-black py-2" onClick={() => setMenuOpen(false)}>Hobbiess</Link>
                 <Link to="/contact" className="block text-center hover:text-black py-2" onClick={() => setMenuOpen(false)}>Contact</Link>
               </div>
             )}
