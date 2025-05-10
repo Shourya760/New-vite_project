@@ -34,7 +34,7 @@ const Contact = () => {
         <img
           src="/shourya.jpg"
           alt="Profile"
-          className="w-40 h-40 object-cover rounded-full border-4 border-white shadow-lg"
+          className="w-40 h-40 object-cover rounded-full border-4 border-white shadow-lg transform transition-transform duration-500 hover:rotate-360"
         />
         <nav className="space-y-4 text-lg w-full px-4">
           <Link to="/home" className="hover:text-black block py-2 px-4 rounded transition duration-300">Home</Link>
