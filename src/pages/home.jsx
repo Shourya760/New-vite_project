@@ -64,7 +64,7 @@ function Home() {
             animate={{ opacity: 1 }}
             transition={{ ...spring, delay: 0.8 }}
           >
-            Electrical engineer with a creative edge, blending technical expertise with artistic vision to design innovative solutions. Welcome to my portfolio, where engineering meets imagination. Here, circuits and creativity converge to build tomorrow's sustainable technologies with both precision and passion.
+            Electronics engineer with a creative edge, blending technical expertise with artistic vision to design innovative solutions. Welcome to my portfolio, where engineering meets imagination. Here, circuits and creativity converge to build tomorrow's sustainable technologies with both precision and passion.
           </motion.p>
 
           <motion.div
