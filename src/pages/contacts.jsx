@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Monitor, Phone, Mail, MapPin } from 'lucide-react';
+import { useNavigate } from "react-router-dom";
 
 const Contact = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,7 +27,7 @@ const Contact = () => {
     alert('Thank you for your message! I will get back to you soon.');
     setFormData({ name: '', email: '', message: '' });
   };
-  
+
   return (
     <div className="min-h-screen font-sans flex flex-col md:flex-row bg-gray-100">
 
@@ -77,7 +79,7 @@ const Contact = () => {
           <h1 className="text-3xl sm:text-5xl text-center font-bold border-b-4 border-yellow-500 pb-4 mb-8 text-gray-800">CONTACT ME</h1>
 
           <div className="min-h-[70vh] flex flex-col">
-          {/* Heading and Paragraph */}
+            {/* Heading and Paragraph */}
             <div className="mb-12">
               <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6">
                 Feel <span className="font-bold text-yellow-500">free</span> to contact me!
@@ -123,56 +125,56 @@ const Contact = () => {
 
               {/* Contact Form Section */}
               <form
-              onSubmit={handleSubmit}
-              className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300"
-            >
-              <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Me a Message</h3>
-
-              <div className="mb-6">
-                <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Your Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                />
-              </div>
-
-              <div className="mb-6">
-                <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Your Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                />
-              </div>
-
-              <div className="mb-6">
-                <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Your Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows="5"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
-                ></textarea>
-              </div>
-
-              <button
-                type="submit"
-                className="w-full bg-yellow-500 text-white py-3 px-6 rounded-md font-medium hover:bg-yellow-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
+                onSubmit={handleSubmit}
+                className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300"
               >
-                Send Message
-              </button>
+                <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Me a Message</h3>
+
+                <div className="mb-6">
+                  <label htmlFor="name" className="block text-gray-700 font-medium mb-2">Your Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                  />
+                </div>
+
+                <div className="mb-6">
+                  <label htmlFor="email" className="block text-gray-700 font-medium mb-2">Your Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                  />
+                </div>
+
+                <div className="mb-6">
+                  <label htmlFor="message" className="block text-gray-700 font-medium mb-2">Your Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full bg-yellow-500 text-white py-3 px-6 rounded-md font-medium hover:bg-yellow-600 transition duration-300 focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2"
+                >
+                  Send Message
+                </button>
               </form>
 
             </div>
@@ -188,6 +190,21 @@ const Contact = () => {
             </div>
           </div>
         </section>
+        {/* Fixed navigation buttons at bottom */}
+        <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4 z-50">
+          <button
+            onClick={() => navigate("/hobbies")}
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-xl shadow transition duration-200"
+          >
+            Previous Page
+          </button>
+          <button
+            onClick={() => navigate("/home")}
+            className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-xl shadow transition duration-200"
+          >
+            Home Page
+          </button>
+        </div>
       </main>
     </div>
   );

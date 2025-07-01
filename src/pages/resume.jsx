@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Resume = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const navigate = useNavigate();
   const education = [
     { id: 1, title: "Secondary School", subtitle: "The Doon Valley Public School", description: "Completed in 2024 with 85.8 %" },
     { id: 2, title: "Intermediate", subtitle: "The Doon Valley Public School", description: "Completed in 2025 with 80.6 %" },
@@ -61,10 +62,20 @@ const Resume = () => {
 
       {/* Main Content */}
       <main className="w-full md:w-4/5 p-4 md:p-8 relative">
-        <h1 className="text-3xl sm:text-5xl text-center font-bold border-b-4 border-black pb-4 mb-8 text-gray-800">
-          RESUME
-        </h1>
+        <div className="relative mb-8">
+          <h1 className="text-3xl sm:text-5xl text-center font-bold border-b-4 border-black pb-4 text-gray-800">
+            RESUME
+          </h1>
 
+          <a
+            href="/Shourya-Resume.pdf" // Replace with your actual PDF file name/path
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute top-0 right-0 bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-semibold py-2 px-4 rounded shadow transition duration-300"
+          >
+            Download
+          </a>
+        </div>
         {/* Education Section */}
         <section className="mb-12">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">EDUCATION</h2>
@@ -92,6 +103,21 @@ const Resume = () => {
             ))}
           </div>
         </section>
+        {/* Fixed navigation buttons at bottom */}
+        <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4 z-50">
+          <button
+            onClick={() => navigate("/about")}
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-xl shadow transition duration-200"
+          >
+            Previous Page
+          </button>
+          <button
+            onClick={() => navigate("/portfolio")}
+            className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-xl shadow transition duration-200"
+          >
+            Next Page
+          </button>
+        </div>
       </main>
     </div>
   );

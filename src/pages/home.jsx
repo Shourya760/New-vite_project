@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 function Home() {
   const [iconsVisible, setIconsVisible] = useState(false);
-
+ 
   const socialLinks = [
     { icon: Facebook, url: 'https://www.facebook.com/shourya.verma.52831', color: 'text-blue-600' },
     { icon: Twitter, url: 'https://twitter.com/@ShouryaVer20277', color: 'text-blue-400' },

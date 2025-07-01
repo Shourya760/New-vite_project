@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Hobbies = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
   const portfolioItems = [
     { id: 1, category: "Graphic Design", img: "https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?auto=compress&cs=tinysrgb&w=600" },
     { id: 2, category: "Graphic Design", img: "https://images.pexels.com/photos/33045/lion-wild-africa-african.jpg?auto=compress&cs=tinysrgb&w=600" },
@@ -96,7 +98,21 @@ const Hobbies = () => {
             </div>
           ))}
         </div>
-
+         {/* Fixed navigation buttons at bottom */}
+        <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4 z-50">
+          <button
+            onClick={() => navigate("/resume")}
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-xl shadow transition duration-200"
+          >
+            Previous Page
+          </button>
+          <button
+            onClick={() => navigate("/hobbies")}
+            className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-xl shadow transition duration-200"
+          >
+            Next Page
+          </button>
+        </div>
 
 
       </main>

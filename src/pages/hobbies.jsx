@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Hobbies = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-
+  const navigate = useNavigate();
   const sketches = [
     { id: 1, title: "Sketch 1", img: "/sketch1.jpg" },
     { id: 2, title: "Sketch 2", img: "/sketch2.jpg" },
@@ -81,6 +82,21 @@ const Hobbies = () => {
             ))}
           </div>
         </section>
+        {/* Fixed navigation buttons at bottom */}
+        <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4 z-50">
+          <button
+            onClick={() => navigate("/portfolio")}
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-xl shadow transition duration-200"
+          >
+            Previous Page
+          </button>
+          <button
+            onClick={() => navigate("/contact")}
+            className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-xl shadow transition duration-200"
+          >
+            Next Page
+          </button>
+        </div>
       </main>
     </div>
   );

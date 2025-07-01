@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+ 
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen font-sans flex flex-col md:flex-row bg-gray-100">
@@ -11,7 +14,7 @@ const About = () => {
         <img
           src="/shourya.jpg"
           alt="Profile"
-          className="w-40 h-40 object-cover rounded-full border-4 border-white shadow-lg transform transition-transform duration-500 hover:rotate-360"
+          className="w-40 h-40 object-cover rounded-full border-4 border-white shadow-lg transform transition-transform duration-1500 hover:rotate-360"
         />
 
         <nav className="space-y-4 text-lg w-full px-4">
@@ -88,6 +91,21 @@ const About = () => {
             ))}
           </div>
         </section>
+         {/* Fixed navigation buttons at bottom */}
+        <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4 z-50">
+          <button
+            onClick={() => navigate("/home")}
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-xl shadow transition duration-200"
+          >
+            Previous Page
+          </button>
+          <button
+            onClick={() => navigate("/resume")}
+            className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-xl shadow transition duration-200"
+          >
+            Next Page
+          </button>
+        </div>
       </main>
     </div>
   );
