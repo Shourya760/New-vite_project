@@ -84,9 +84,6 @@ const Hobbies = () => {
           ))}
         </div>
 
-
-
-
         {/* Image Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
           {filteredItems.map((item) => (
@@ -98,23 +95,33 @@ const Hobbies = () => {
             </div>
           ))}
         </div>
-         {/* Fixed navigation buttons at bottom */}
-        <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4 z-50">
+        <br></br>
+        {/* Image Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+          {filteredItems.map((item) => (
+            <div key={item.id} className="bg-white rounded-lg shadow hover:shadow-lg overflow-hidden">
+              <img src={item.img} alt={item.category} className="w-full h-48 object-cover" />
+              <div className="p-4">
+                <h3 className="font-bold text-gray-800">{item.category}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+        {/* Navigation buttons at page end */}
+        <div className="w-full flex justify-center space-x-4 mt-12">
           <button
             onClick={() => navigate("/resume")}
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-xl shadow transition duration-200"
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-3 px-6 rounded-xl shadow transition duration-200"
           >
             Previous Page
           </button>
           <button
             onClick={() => navigate("/hobbies")}
-            className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-xl shadow transition duration-200"
+            className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-6 rounded-xl shadow transition duration-200"
           >
             Next Page
           </button>
         </div>
-
-
       </main>
     </div>
   );

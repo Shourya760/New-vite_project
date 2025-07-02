@@ -103,17 +103,17 @@ const Resume = () => {
             ))}
           </div>
         </section>
-        {/* Fixed navigation buttons at bottom */}
-        <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-4 z-50">
+        {/* Navigation buttons at page end */}
+        <div className="w-full flex justify-center space-x-4 mt-12">
           <button
             onClick={() => navigate("/about")}
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-2 px-4 rounded-xl shadow transition duration-200"
+            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-3 px-6 rounded-xl shadow transition duration-200"
           >
             Previous Page
           </button>
           <button
             onClick={() => navigate("/portfolio")}
-            className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-2 px-4 rounded-xl shadow transition duration-200"
+            className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-6 rounded-xl shadow transition duration-200"
           >
             Next Page
           </button>
