@@ -68,7 +68,7 @@ const Resume = () => {
           </h1>
 
           <a
-            href="\public\shourya resume.pdf" // Replace with your actual PDF file name/path
+            href="\shourya resume.pdf"
             target="_blank"
             rel="noopener noreferrer"
             className="absolute top-0 right-0 bg-yellow-500 hover:bg-yellow-600 text-white text-sm font-semibold py-2 px-4 rounded shadow transition duration-300"

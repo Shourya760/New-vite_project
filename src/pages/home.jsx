@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 
 function Home() {
   const [iconsVisible, setIconsVisible] = useState(false);
- 
+
   const socialLinks = [
     { icon: Facebook, url: 'https://www.facebook.com/shourya.verma.52831', color: 'text-blue-600' },
     { icon: Twitter, url: 'https://twitter.com/@ShouryaVer20277', color: 'text-blue-400' },
@@ -55,7 +55,7 @@ function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ ...spring, delay: 0.6 }}
           >
-            Electronics Engineer / Creative Artist
+            Electronics Engineer / Creative Student
           </motion.h3>
 
           <motion.p
@@ -64,8 +64,7 @@ function Home() {
             animate={{ opacity: 1 }}
             transition={{ ...spring, delay: 0.8 }}
           >
-            Electronics engineer with a creative edge, blending technical expertise with artistic vision to design innovative solutions. Welcome to my portfolio, where engineering meets imagination. Here, circuits and creativity converge to build tomorrow's sustainable technologies with both precision and passion.
-          </motion.p>
+            Electronics engineering student with a passion for exploring technology and creative problem-solving. Welcome to my portfolio, where learning meets innovation. Here, academic knowledge and hands-on projects come together to build a strong foundation for designing tomorrow’s advanced and sustainable electronic systems with curiosity and dedication.          </motion.p>
 
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}

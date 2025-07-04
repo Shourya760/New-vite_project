@@ -57,9 +57,10 @@ const About = () => {
           <h1 className="text-3xl sm:text-5xl text-center font-bold border-b-4 border-black pb-4 mb-8 text-gray-800">ABOUT ME</h1>
           <p className="text-lg text-gray-700 mb-8">
             I'm <span className="font-bold text-yellow-500">Shourya Verma</span>,
-            a Electronics Engineer who loves creating beautiful designs and smart tech solutions.
-            I enjoy combining creativity with technical skills to make things that look great and work even better.
-            Let's build something amazing together!"
+            an Electronics Engineering student who loves creating innovative projects and exploring new technologies.
+            I enjoy combining creativity with technical skills to develop solutions that are both practical and inspiring.
+            Let's learn, grow, and build something amazing together!
+
           </p>
 
           {/* Stats */}
