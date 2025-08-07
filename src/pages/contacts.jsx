@@ -20,13 +20,13 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Here you would typically send the form data to a server
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({ name: '', email: '', message: '' });
-  };
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   // Here you would typically send the form data to a server
+  //   console.log('Form submitted:', formData);
+  //   alert('Thank you for your message! I will get back to you soon.');
+  //   setFormData({ name: '', email: '', message: '' });
+  // };
 
   return (
     <div className="min-h-screen font-sans flex flex-col md:flex-row bg-gray-100">
@@ -135,8 +135,10 @@ const Contact = () => {
 
               {/* Contact Form Section */}
               <form
-                onSubmit={handleSubmit}
+                action="https://formspree.io/f/xkgzpbnv"
+                // onSubmit={handleSubmit}
                 className="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+                method="POST"
               >
                 <h3 className="text-2xl font-bold text-gray-800 mb-6">Send Me a Message</h3>
 
