@@ -2,10 +2,21 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { Monitor, Phone, Mail, MapPin } from 'lucide-react';
 import { useNavigate } from "react-router-dom";
+import { useSwipeable } from "react-swipeable";
+
 
 const Contact = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+
+  const handlers = useSwipeable({
+    onSwipedLeft: () => navigate("/home"),   // Go next
+    onSwipedRight: () => navigate("/hobbies"),    // Go previous
+    preventScrollOnSwipe: true,
+    trackTouch: true,
+    trackMouse: false,
+  });
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -20,16 +31,9 @@ const Contact = () => {
     }));
   };
 
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   // Here you would typically send the form data to a server
-  //   console.log('Form submitted:', formData);
-  //   alert('Thank you for your message! I will get back to you soon.');
-  //   setFormData({ name: '', email: '', message: '' });
-  // };
 
   return (
-    <div className="min-h-screen font-sans flex flex-col md:flex-row bg-gray-100">
+    <div {...handlers} className="min-h-screen font-sans flex flex-col md:flex-row bg-gray-100">
 
       {/* Sidebar for Desktop */}
       <aside className="hidden md:flex flex-col w-1/5 bg-yellow-500 text-white items-center py-8 space-y-8">
@@ -202,22 +206,11 @@ const Contact = () => {
             </div>
           </div>
         </section>
-        {/* Fixed navigation buttons at bottom */}
-        {/* Navigation buttons at page end */}
-        <div className="w-full flex justify-center space-x-4 mt-12">
-          <button
-            onClick={() => navigate("/hobbies")}
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-3 px-6 rounded-xl shadow transition duration-200"
-          >
-            Previous Page
-          </button>
-          <button
-            onClick={() => navigate("/home")}
-            className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-6 rounded-xl shadow transition duration-200"
-          >
-            Home Page
-          </button>
-        </div>
+
+
+        <p className="text-center text-gray-500 mt-12 text-sm">
+          Swipe left or right to go to next pages!
+        </p>
       </main>
     </div>
   );

@@ -1,10 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { useSwipeable } from "react-swipeable";
+
 
 const Hobbies = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+
+  const handlers = useSwipeable({
+  onSwipedLeft: () => navigate("/contact"),   // Go next
+  onSwipedRight: () => navigate("/portfolio"),    // Go previous
+  preventScrollOnSwipe: true,
+  trackTouch: true,
+  trackMouse: false,
+});
+
   const sketches = [
     { id: 1, title: "Sketch 1", img: "/sketch1.jpg" },
     { id: 2, title: "Sketch 2", img: "/sketch2.jpg" },
@@ -12,7 +23,7 @@ const Hobbies = () => {
   ];
 
   return (
-    <div className="min-h-screen font-sans flex flex-col md:flex-row bg-gray-50">
+<div {...handlers} className="min-h-screen font-sans flex flex-col md:flex-row bg-gray-100">
       {/* Sidebar */}
       <aside className="hidden md:flex flex-col w-1/5 bg-yellow-500 text-white items-center py-8 space-y-8">
         <img
@@ -41,17 +52,27 @@ const Hobbies = () => {
         <span className="text-xl font-bold font-serif">Shourya Verma</span>
       </div>
 
-      {/* Mobile Dropdown */}
+      {/* Mobile Dropdown Menu */}
       {menuOpen && (
-        <div className="md:hidden bg-yellow-400 text-white space-y-2 px-4 py-2">
-          <Link to="/home" className="block text-center hover:text-black py-2" onClick={() => setMenuOpen(false)}>Home</Link>
-          <Link to="/about" className="block text-center hover:text-black py-2" onClick={() => setMenuOpen(false)}>About Me</Link>
-          <Link to="/resume" className="block text-center hover:text-black py-2" onClick={() => setMenuOpen(false)}>Resume</Link>
-          <Link to="/portfolio" className="block text-center hover:text-black py-2" onClick={() => setMenuOpen(false)}>Portfolio</Link>
-          <Link to="/hobbies" className="block text-center hover:text-black py-2 bg-white text-yellow-500 rounded font-medium" onClick={() => setMenuOpen(false)}>Hobbies</Link>
-          <Link to="/contact" className="block text-center hover:text-black py-2" onClick={() => setMenuOpen(false)}>Contact</Link>
+        <div className="fixed inset-0 z-50 bg-yellow-500/95 backdrop-blur flex flex-col items-center justify-center space-y-8 transition-all duration-300">
+          <button
+            className="absolute top-6 right-6 text-4xl text-white focus:outline-none"
+            onClick={() => setMenuOpen(false)}
+          >
+            ×
+          </button>
+
+          <nav className="flex flex-col space-y-6 text-2xl font-bold text-white text-center">
+            <Link to="/home" className="hover:text-black" onClick={() => setMenuOpen(false)}>Home</Link>
+            <Link to="/about" className="hover:text-black" onClick={() => setMenuOpen(false)}>About Me</Link>
+            <Link to="/resume" className="hover:text-black" onClick={() => setMenuOpen(false)}>Resume</Link>
+            <Link to="/portfolio" className="hover:text-black" onClick={() => setMenuOpen(false)}>Portfolio</Link>
+            <Link to="/Hobbies" className="hover:text-black bg-white text-yellow-500 px-4 py-2 rounded font-semibold" onClick={() => setMenuOpen(false)}>Hobbies</Link>
+            <Link to="/contact" className="hover:text-black" onClick={() => setMenuOpen(false)}>Contact</Link>
+          </nav>
         </div>
       )}
+
 
       {/* Main Content */}
       <main className="w-full md:w-4/5 p-6 md:p-12">
@@ -82,21 +103,10 @@ const Hobbies = () => {
             ))}
           </div>
         </section>
-        {/* Navigation buttons at page end */}
-        <div className="w-full flex justify-center space-x-4 mt-12">
-          <button
-            onClick={() => navigate("/portfolio")}
-            className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-3 px-6 rounded-xl shadow transition duration-200"
-          >
-            Previous Page
-          </button>
-          <button
-            onClick={() => navigate("/contact")}
-            className="bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-6 rounded-xl shadow transition duration-200"
-          >
-            Next Page
-          </button>
-        </div>
+        <p className="text-center text-gray-500 mt-12 text-sm">
+           Swipe left or right to go to next pages!
+        </p>
+        
       </main>
     </div>
   );
